@@ -8,6 +8,11 @@ class Articles extends Model
 {
     public function Categorie()
     {
-        return $this->belongsTo('App\Categorie');
+        return $this->belongsTo('App\Categories');
+    }
+
+    public function Orders()
+    {
+        return $this->hasMany('App\Orders');
     }
 }

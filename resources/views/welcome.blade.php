@@ -3,40 +3,44 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-            <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+    <div class="row">
+        <div class="col-12">
+            <div class="row d-flex align-items-end">
+                <div class="col-12 pt-3 text-center">
+                        <img src="" class="w-100">
+                        <h1 class="title">welcome</h1>
+                        <h4>bij De Eekhoorn</h4>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="col-7 pt-3">
+                    <a class="productLink bg-info" href="#">
+                        <h3>advertentie 1</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate praesentium quidem iste accusantium, quaerat ipsum perferendis doloremque excepturi officia. Tempora consectetur, vitae ab optio quidem molestias officia minus nam quia!
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla vero impedit itaque sed, neque voluptatibus enim quisquam, quas, qui eos est labore officia aut corporis fugit similique! Ea, temporibus provident?
+                        </p>
+                    </a>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-5 pt-3">
+                    <a class="productLink bg-danger" href="#">
+                        <h3>advertentie 2</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate praesentium quidem iste accusantium, quaerat ipsum perferendis doloremque excepturi officia. Tempora consectetur, vitae ab optio quidem molestias officia minus nam quia!</p>
+                    </a>
                 </div>
-            </div>
-        </div>
+                <div class="col-4 pt-3">
+                    <a class="productLink bg-success" href="#">
+                    <h3>advertentie 3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate praesentium quidem iste accusantium, quaerat ipsum perferendis doloremque excepturi officia. Tempora consectetur, vitae ab optio quidem molestias officia minus nam quia!</p>
+                    </a>
+                </div>
+                <div class="col-8 pt-3">
+                    <a class="productLink bg-warning" href="#">
+                    <h3>advertentie 4</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate praesentium quidem iste accusantium, quaerat ipsum perferendis doloremque excepturi officia. Tempora consectetur, vitae ab optio quidem molestias officia minus nam quia!
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla vero impedit itaque sed, neque voluptatibus enim quisquam, quas, qui eos est labore officia aut corporis fugit similique! Ea, temporibus provident?
+                        </p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

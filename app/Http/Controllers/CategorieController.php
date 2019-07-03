@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Categorie;
+use App\Categories;
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
-    public function index($categorie)
+    public function index()
     {
-        $category = categorie::where('name', $categorie);
-        dd($category);
+        categorie::all();
     }
 }

@@ -10713,3 +10713,11 @@ a.text-dark:focus {
   .number {
     width: 15%;
   }
+
+  .title {
+    font-size: 84px;
+  }
+
+  .text {
+    display: block;
+  }

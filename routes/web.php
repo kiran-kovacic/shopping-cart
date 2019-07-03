@@ -11,16 +11,30 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'ProductsController@welcome');
+
+Route::get('/producten', 'ProductsController@index');
+
+Route::get('/producten/{article}', 'ProductsController@show');
+
+Route::get('/producten/addToCart/{id}', 'ProductsController@addToCart');
+
+Route::get('/cart/addOrRemoveArticle/{id}', 'CartController@addOrRemoveArticle');
+
+Route::get('/cart', 'CartController@index');
+
+Route::get('/flush', 'ProductsController@flushShoppingcart');
+
+Route::group(['middleware' => 'auth'], function() {
+
+    Route::get('/order/{price}', 'OrderController@makeOrder');
+
+    Route::get('/orders', 'OrderController@info');
+
 });
-
-Route::get('/producten', 'ProductsController@index')->name('/producten.index');
-
-Route::get('/producten/{article}', 'ProductsController@show')->name('/product.show');
-
-Route::get('/{categorie}', 'CategorieController@index')->name('/categorie.index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/categorie/{categorie}', 'ProductsController@category');
+
+Route::get('/categorie/producten/{article}', 'ProductsController@show');

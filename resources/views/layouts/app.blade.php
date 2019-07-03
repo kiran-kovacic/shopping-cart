@@ -12,6 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3ec19be346.js"></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -21,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div><img src="/img/squirrel.svg" style="height: 30px;" class="pr-3"></div>
@@ -35,30 +38,19 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <div class="menu">
-                            <a class="btn" href="/producten" role="button">
-                                Producten
-                            </a>
+                            <a class="btn" href="/producten" role="button">Producten</a>
                             <div class="menu-content">
-                                <a class="btn" href="/rugzakken" role="button">
-                                    Rugzakken
-                                </a>
-                                <a class="btn" href="/shoenen" role="button">
-                                    Schoenen
-                                </a>
-                                <a class="btn" href="/tenten" role="button">
-                                    Tenten
-                                </a>
-                                <a class="btn" href="/slaapzakken" role="button">
-                                    Slaapzakken
-                                </a>
-                                <a class="btn" href="/slaapmatten" role="button">
-                                    Slaapmatten
-                                </a>
-                                <a class="btn" href="/jassen" role="button">
-                                    Jassen
-                                </a>
+                                @foreach($categories as $category)
+                                    <a class="btn" href="/categorie/{{$category->id}}" role="button">
+                                        {{ $category->name }}
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
+                        @guest
+                        @else
+                            <a class="btn" href="/orders" role="button">bestellingen</a>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -92,6 +84,7 @@
                                 </div>
                             </li>
                         @endguest
+                        <a href="/cart" class="ml-2 btn"><i class="fas fa-shopping-cart"></i></a>
                     </ul>
                 </div>
             </div>
